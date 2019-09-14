@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'compoments/home/home.dart';
+import 'ui/page/home/home.dart';
 
 void main() => runApp(App());
 
@@ -10,9 +10,9 @@ class App extends StatelessWidget {
     return MaterialApp(
       title: 'Bargen',
       theme: ThemeData(
-        primarySwatch: Colors.teal,
+        primarySwatch: Colors.blueGrey,
       ),
-      home: Home(),
+      home: HomePage(),
     );
   }
 }
