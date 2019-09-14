@@ -1,17 +1,15 @@
-import 'package:flutter/material.dart';
 import 'package:barcode_flutter/barcode_flutter.dart';
+import 'package:flutter/material.dart';
 
 import '../../components/barcode.dart';
 import '../../components/buttons.dart';
 
-class HomePage extends StatefulWidget {
-  final String title = "Bargen";
-
+class BarcodePage extends StatefulWidget {
   @override
-  _HomeState createState() => _HomeState();
+  State<StatefulWidget> createState() => _BarcodePageState();
 }
 
-class _HomeState extends State<HomePage> {
+class _BarcodePageState extends State<BarcodePage> {
   final _barcodeStringController = TextEditingController();
   BarCodeType _selectedBarcodeType = BarCodeType.Code39;
   BarCodeType _barcodeType;
@@ -19,13 +17,9 @@ class _HomeState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
+    return Center(
+      child: SingleChildScrollView(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             _barcode(),
             _inputArea(),

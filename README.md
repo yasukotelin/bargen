@@ -1,13 +1,13 @@
-# bargen
+# Bargen
 
-bargen is Barcode Generator App for Android created by Flutter.
+Bargen is Barcode Generator App for Android created by Flutter.
 
-<img src="./images/bargen-snapshot.jpeg" alt="bargen snapshot" height=400px>
+<img src="./images/barget-demo.gif" alt="bargen demo gif" height=400px>
 
 ## Features
 
 - Generate a Barcode.
-- Generate a QRCode(Not implemented).
+- Generate a QRCode.
 - for Android.
 - for iOS(Not tested).
 
