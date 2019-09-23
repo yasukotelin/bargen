@@ -29,11 +29,15 @@ class _QRCodePageState extends State<QRCodePage> {
 
   Widget _qrcode() {
     return Container(
-      child: QrImage(
-        data: _codeText,
-        version: QrVersions.auto,
-        size: 150.0,
-      ),
+      height: 200,
+      alignment: Alignment.center,
+      child: _codeText.isEmpty
+          ? Icon(Icons.select_all, size: 100.0)
+          : QrImage(
+              data: _codeText,
+              version: QrVersions.auto,
+              size: 150.0,
+            ),
     );
   }
 
@@ -53,9 +57,9 @@ class _QRCodePageState extends State<QRCodePage> {
 
   Widget _createButton() {
     return Container(
-      margin: EdgeInsets.only(top: 15.0),
-      child: BorderEllipseButton(
-        text: "Create",
+      margin: EdgeInsets.only(top: 20.0),
+      child: RaisedButton(
+        child: Text("Create"),
         onPressed: () {
           setState(() {
             _codeText = _codeStringControler.text;

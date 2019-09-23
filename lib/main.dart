@@ -10,7 +10,11 @@ class App extends StatelessWidget {
     return MaterialApp(
       title: 'Bargen',
       theme: ThemeData(
-        primarySwatch: Colors.blueGrey,
+        primarySwatch: Colors.deepPurple,
+        buttonTheme: ButtonThemeData(
+          buttonColor: Colors.deepPurpleAccent,
+          textTheme: ButtonTextTheme.primary,
+        ),
       ),
       home: HomePage(),
     );

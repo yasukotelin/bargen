@@ -13,7 +13,7 @@ class _BarcodePageState extends State<BarcodePage> {
   final _barcodeStringController = TextEditingController();
   BarCodeType _selectedBarcodeType = BarCodeType.Code39;
   BarCodeType _barcodeType;
-  String _barcodeString;
+  String _barcodeString = "";
 
   @override
   Widget build(BuildContext context) {
@@ -30,10 +30,16 @@ class _BarcodePageState extends State<BarcodePage> {
     );
   }
 
-  Barcode _barcode() {
-    return Barcode(
-      barcodeString: _barcodeString,
-      codeType: _barcodeType,
+  Widget _barcode() {
+    return Container(
+      alignment: Alignment.center,
+      height: 150,
+      child: _barcodeString.isEmpty
+          ? Icon(Icons.blur_on, size: 100)
+          : Barcode(
+              barcodeString: _barcodeString,
+              codeType: _barcodeType,
+            ),
     );
   }
 
@@ -78,9 +84,9 @@ class _BarcodePageState extends State<BarcodePage> {
 
   Widget _createButton() {
     return Container(
-      margin: EdgeInsets.only(top: 15.0),
-      child: BorderEllipseButton(
-        text: "Create",
+      margin: EdgeInsets.only(top: 20.0),
+      child: RaisedButton(
+        child: Text("Create"),
         onPressed: () {
           setState(() {
             _barcodeString = _barcodeStringController.text;
